@@ -4,10 +4,10 @@ This repo is an attempt at gathering and organizing a knowledge base shared betw
 
 Make sure to assign every item to a major category and link it somewhere. Also, please write a short description to give some context to the link you are posting. In the future, in case this works, we might decide to turn this into a proper wiki! 
 
-- :hammer_and_pick: Tutorials and courses
-  - Robotics
-  - Programming
-  - Git
+- :hammer_and_pick: [Tutorials and courses](tutorials_courses.md)
+  - [Robotics](tutorials_courses.md#robotics)
+  - [Programming](tutorials_courses.md#programming)
+  - [Git](tutorials_courses.md#git)
 - :mortar_board: Publications
   - Robotics
 - :books: Documentation
