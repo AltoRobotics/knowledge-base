@@ -6,9 +6,10 @@ Make sure to assign every item to a major category and link it somewhere. Also, 
 
 - :hammer_and_pick: [Tutorials and courses](tutorials_courses.md)
   - [Robotics](tutorials_courses.md#robotics)
-  - [Robot Programming](<tutorials_courses.md#robot-programming>)
-  - [Data Science, AI, ML](<tutorials_courses.md#data-science-ai-ml>)
+  - [Robot Programming](tutorials_courses.md#robot-programming)
+  - [Data Science, AI, ML](tutorials_courses.md#data-science-ai-ml)
   - [C++](tutorials_courses.md#cpp)
+  - [Python](tutorials_courses.md#python)
   - [Build Systems](tutorials_courses.md#build-systems)
   - [Git](tutorials_courses.md#git)
 - :mortar_board: Publications
