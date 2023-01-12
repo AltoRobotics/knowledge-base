@@ -1,11 +1,11 @@
 # Tutorials and Courses
 
---- 
+---
 ## Robotics
 
 - [book] Lynch, Kevin M., and Frank C. Park. Modern robotics. Cambridge University Press, 2017. [[PDF]](http://hades.mech.northwestern.edu/images/7/7f/MR.pdf)
 
---- 
+---
 ## Robot Programming
 
 - [tutorial] Making a mobile robot in ROS2+Gazebo [[link]](https://articulatedrobotics.xyz/mobile-robot-1-project-overview/)
@@ -18,13 +18,15 @@
 - [book] Neural Networks and Deep Learning [[link]](http://neuralnetworksanddeeplearning.com/)
 - [course] Data Analysis with Python - Full Course for Beginners [[link]](https://www.youtube.com/watch?v=r-uOLxNrNk8)
 
-## C++
+## <a id="cpp" />C++
+
 - [tour] C++ tour [[link]](https://isocpp.org/tour)
 - [cpp] Back to basics video [[link]](https://www.youtube.com/playlist?list=PLPx_x6oKUZyt54Z1aFzLvTsCS96EyPoaj)
 - [doc] C++  reference [[link]](https://en.cppreference.com/w/cpp)
 - [guidelines] C++ core guidelines [[link]](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md)
 
 ## Build Systems
+
 - [cmake] Cmake stuff [[link]](https://www.youtube.com/playlist?list=PL8i3OhJb4FNV10aIZ8oF0AA46HgA2ed8g)
 
 ---
