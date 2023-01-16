@@ -17,5 +17,5 @@ Make sure to assign every item to a major category and link it somewhere. Also, 
 - :books: Documentation
 - :robot: Sensors and Actuators
 - Tools
-  - [image labelling tool] https://github.com/wkentaro/labelme
+  - Image labelling tool: https://github.com/wkentaro/labelme
 - ...
