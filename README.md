@@ -15,7 +15,7 @@ Make sure to assign every item to a major category and link it somewhere. Also, 
 - :mortar_board: Publications
   - Robotics
 - :books: Documentation
-- :robot: Sensors and Actuators
+- :robot: [Sensors and Actuators](sensors.md)
 - Tools
   - Image labelling tool: https://github.com/wkentaro/labelme
 - ...
