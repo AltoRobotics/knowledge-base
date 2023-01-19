@@ -24,6 +24,7 @@
 - [book] Deep Learning [[link]](https://www.deeplearningbook.org/)
 - [book] Neural Networks and Deep Learning [[link]](http://neuralnetworksanddeeplearning.com/)
 - [course] Data Analysis with Python - Full Course for Beginners [[link]](https://www.youtube.com/watch?v=r-uOLxNrNk8)
+- [faq] How to Label Images for Computer Vision Models [[link]](https://blog.roboflow.com/tips-for-how-to-label-images/)
 
 ---
 ## <a id="cpp" />C++
