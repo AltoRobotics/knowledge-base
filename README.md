@@ -19,4 +19,6 @@ Make sure to assign every item to a major category and link it somewhere. Also, 
 - Tools
   - Image labelling tool LabelImg [[link]](https://github.com/heartexlabs/labelImg)
   - Image labelling tool LabelMe [[link]](https://github.com/wkentaro/labelme)
+- Datasets
+  - Kaggle Datasets [[link]](https://www.kaggle.com/datasets)
 - ...
