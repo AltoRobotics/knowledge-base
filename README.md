@@ -21,4 +21,11 @@ Make sure to assign every item to a major category and link it somewhere. Also, 
   - Image labelling tool LabelMe [[link]](https://github.com/wkentaro/labelme)
 - Datasets
   - Kaggle Datasets [[link]](https://www.kaggle.com/datasets)
+  - Open ML [[link]](https://www.openml.org/)
+  - TensorFlow datasets [[link]](https://www.tensorflow.org/datasets)
+  - Registry [[link]](https://registry.opendata.aws/)
+  - Papers With Code [[link]](https://paperswithcode.com/datasets)
+  
+  
+  
 - ...
