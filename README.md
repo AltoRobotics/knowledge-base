@@ -14,7 +14,9 @@ Make sure to assign every item to a major category and link it somewhere. Also, 
   - [Git](tutorials_courses.md#git)
 - :mortar_board: Publications
   - Robotics
-- :books: Documentation
+- :books: [Documentation](documentation.md)
+  - [Setting up `docker`](documentation.md#setting-up-docker)
+  - [Setting up `nvidia-container-toolkit`](documentation.md#setting-up-nvidia-container-toolkit)
 - :robot: [Sensors and Actuators](sensors.md)
 - Tools
   - Image labelling tool LabelImg [[link]](https://github.com/heartexlabs/labelImg)
