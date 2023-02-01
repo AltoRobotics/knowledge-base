@@ -21,6 +21,7 @@
 
 - [courses] Multiple data science / python courses [[link]](https://www.kaggle.com/learn)
 - [google] Google Crash Course [[link]](https://developers.google.com/machine-learning/crash-course)
+- [handbook] Google Handbook [[link]](https://developers.google.com/machine-learning/guides/rules-of-ml)
 - [book] Deep Learning [[link]](https://www.deeplearningbook.org/)
 - [book] Neural Networks and Deep Learning [[link]](http://neuralnetworksanddeeplearning.com/)
 - [course] Data Analysis with Python - Full Course for Beginners [[link]](https://www.youtube.com/watch?v=r-uOLxNrNk8)
