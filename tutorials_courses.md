@@ -27,6 +27,7 @@
 - [course] Data Analysis with Python - Full Course for Beginners [[link]](https://www.youtube.com/watch?v=r-uOLxNrNk8)
 - [faq] How to Label Images for Computer Vision Models [[link]](https://blog.roboflow.com/tips-for-how-to-label-images/)
 - [tutorial] Deep Learning Projects with Python and Keras [[link]](https://www.youtube.com/watch?v=19LQRx78QVU&list=PLgNJO2hghbmiXg5d4X8DURJP9yv9pgjIu)
+- [pyTorch] Learn PyTorch for Deep Learning: Zero to Mastery book [[link]](https://www.learnpytorch.io/)
 
 ---
 ## <a id="cpp" />C++
