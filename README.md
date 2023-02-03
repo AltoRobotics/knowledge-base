@@ -24,6 +24,7 @@ Make sure to assign every item to a major category and link it somewhere. Also, 
 - Libraries
   - Cpp Libraries [list](repositories.md)
 - Datasets
+  - Google Datasets search [[link]](https://datasetsearch.research.google.com/)
   - Kaggle Datasets [[link]](https://www.kaggle.com/datasets)
   - Open ML [[link]](https://www.openml.org/)
   - TensorFlow datasets [[link]](https://www.tensorflow.org/datasets)
