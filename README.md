@@ -21,6 +21,7 @@ Make sure to assign every item to a major category and link it somewhere. Also, 
 - Tools
   - Image labelling tool LabelImg [[link]](https://github.com/heartexlabs/labelImg)
   - Image labelling tool LabelMe [[link]](https://github.com/wkentaro/labelme)
+  - PlotJuggler [[link]](https://www.plotjuggler.io/)
 - Libraries
   - Cpp Libraries [list](repositories.md)
 - Datasets
