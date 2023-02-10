@@ -20,4 +20,39 @@ We warmly suggest using [`clangd`](https://clangd.llvm.org/) instead of VSCode's
 - Make sure `clangd` is looking for a `libstdc++-XX-dev` that is actually installed. Otherwise, [install it](https://stackoverflow.com/questions/74785927/clangd-doesnt-recognize-standard-headers/74787345)
 - The `clangd` VSCode extension will look, by default, for a `compile_commands.json` file in the workspace root directory. You can generate one, for instance, via the cmake flag `-DCMAKE_EXPORT_COMPILE_COMMANDS=1` and link it from the workspace root directory
 - (optional) You can generate the `compile_commands.json` when building a ROS2 workspace via `colcon build --cmake-args=-DCMAKE_EXPORT_COMPILE_COMMANDS=1`
-- (optional) `clangd` will also auto-format your code if given a `.clang-format` file in the workspace root directory. You can find an example of such file [here](https://github.com/AltoRobotics/dotconfig/blob/main/.clang-format). Make sure you have the `Format On Save` option enabled in the VSCode settings, otherwise it won't work (and you'll be left wondering why).
+- (optional) `clang-format` will also auto-format your code if given a `.clang-format` file in the workspace root directory. You can find an example of such file [here](https://github.com/AltoRobotics/dotconfig/blob/main/.clang-format). Make sure you have the `Format On Save` option enabled in the VSCode settings, otherwise it won't work (and you'll be left wondering why).
+
+## Run tests on Arm architecture using qemu
+
+```
+  $ sudo apt install qemu-user-static qemu-utils gcc-arm-linux-gnueabihf libc6-dev-armhf-cross  g++-arm-linux-gnueabihf
+  
+  $ export CC=arm-linux-gnueabihf-gcc
+  $ export CXX=arm-linux-gnueabihf-g++
+  
+  $ cd $PROJECT_HOME
+  $ mkdir buildArm
+  $ cd buildArm
+  $ cmake ..
+  $ make 
+  
+  $ qemu-arm-static -L /usr/arm-linux-gnueabihf/ test/tests
+
+  ```
+Same thing can be done for aarch64
+
+```
+ $ sudo apt install gcc-aarch64-linux-gnu  g++-aarch64-linux-gnu
+
+ $ export CC=aarch64-linux-gnu-gcc
+ $ export CXX=aarch64-linux-gnu-g++
+
+  $ cd $PROJECT_HOME
+  $ mkdir buildAarch64
+  $ cd buildAarch64
+  $ cmake ..
+  $ make 
+
+  $ qemu-aarch64-static -L /usr/aarch64-linux-gnu/ test/tests
+  ```
+  
