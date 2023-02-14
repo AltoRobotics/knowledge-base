@@ -21,6 +21,14 @@ distribution=ubuntu22.04 \
 ```
 - make sure to [prioritize nvidia's apt repo over system76's](https://github.com/NVIDIA/nvidia-docker/issues/1388#issuecomment-1097326214).
 
+## Propagate gpus to Distrobox
+
+If you use distrobox to handle the development containers be aware that in order to enable the GPU inside of it you need to add `-a "--gpus all --device /dev/dri"` to the distrobox command.
+e.g.
+```shell
+$ distrobox create --image alto/ros:humble-dev --name dockHumble -a "--gpus all --device /dev/dri" 
+```
+
 ## Setting up VSCode to auto-complete c++
 We like VSCode and c++, we don't like not having auto-completion. 
 We warmly suggest using [`clangd`](https://clangd.llvm.org/) instead of VSCode's own IntelliSense engine. In order to do this, the following are required:
