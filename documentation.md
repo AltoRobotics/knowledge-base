@@ -73,3 +73,71 @@ Same thing can be done for aarch64
   $ qemu-aarch64-static -L /usr/aarch64-linux-gnu/ test/tests
   ```
   
+## Cross build ROS2 Package
+
+Cross building packages for a dockered Ros2 ARMv864 container is something needed but it is not clear on how to do in a blessed way.
+I devised a way to do it in a way that seems to work at least in simple cases.
+
+### Prerequisites
+
+For an armv8 build you need
+
+1- cross compilers and qemu: for simplicity you can install the ones given with Ubuntu
+
+```
+sudo apt install  qemu-user-static qemu-utils gcc-aarch64-linux-gnu  g++-aarch64-linux-gnu
+```
+
+A sysroot that is a root filesystem that contains the library you need to build against.
+
+Otherwise you can copy it from the target with rsync, mount it with ssh-fs or extract from a docker I created it from a docker using
+
+### Workaround &#128544;
+
+It seems that rclcpp confuses cmake so you will need to add a symbolic link in 
+
+```
+/usr/lib/aarch64-linux-gnu $ sudo ln -s ${SYSROOT}/usr/lib/aarch64-linux-gnu/libpython3.10.so
+
+```
+
+### Proper crossbuilding
+
+then you need a cmake toolchain file like this one in which 
+
+https://github.com/peppedxAlto/simplepackage/blob/master/aarch64.cmake
+
+please export a bash variable SYSROOT pointing to the sysroot like
+
+```
+$ export SYSROOT=/home/giellamo/roots
+```
+
+Then you can build
+
+```
+ $ colcon build --cmake-force-configure --cmake-args --no-warn-unused-cli   -DCMAKE_TOOLCHAIN_FILE=`pwd`/aarch64.cmake
+ ```
+
+ Then copy your workspace to your target (docker or not)
+
+ e.g.
+ ```
+ $ rsync -avz  rostest jetson@192.168.1.202:
+ ```
+
+ ### How to extract a rootfs from a docker image
+
+example
+
+ ```
+ $ docker run --rm arm64v8/ros:humble-perception-jammy
+ $ export IMAGE_NAME=arm64v8/ros:humble-perception-jammy
+ $ docker-squash -f $(($(docker history $IMAGE_NAME | wc -l | xargs)-1)) -t ${IMAGE_NAME}:squashed $IMAGE_NAME
+ $ docker image save  arm64v8/ros:humble-perception-jammy -o ${PATH_TO_RFS}/arm64ros.tar
+ $ cd ${PATH_TO_RFS}
+ $ tar xvf arm64ros.tar
+ $ tar xvf  b42329b86bd604ec09f30d2f9fda6f7c21c7d44cb7d3adab4285adbb664216b/layer.tar # it will be a different hash
+ ``` 
+
+ps docker-squash needs to be installed with pip.

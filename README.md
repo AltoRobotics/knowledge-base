@@ -19,6 +19,7 @@ Make sure to assign every item to a major category and link it somewhere. Also, 
   - [Setting up `nvidia-container-toolkit`](documentation.md#setting-up-nvidia-container-toolkit)
   - [Setting up VSCode with auto-completion for c++](documentation.md#setting-up-vscode-to-auto-complete-c)
   - [Run tests on Arm architecture using qemu](documentation.md#run-tests-on-arm-architecture-using-qemu)
+  - [Cross build ROS2 Package](documentation.md#cross-build-ros2-package)
 - :robot: [Sensors and Actuators](sensors.md)
 - Tools
   - Image labelling tool LabelImg [[link]](https://github.com/heartexlabs/labelImg)
