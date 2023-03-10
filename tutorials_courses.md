@@ -9,6 +9,9 @@
 - [book] Colledanchise, Michele, and Petter Ögren. _Behavior trees in robotics and AI: An introduction_. CRC Press, 2018. [[PDF]](https://arxiv.org/pdf/1709.00084)
 - [book] Mason, Matthew T. _Mechanics of robotic manipulation_. MIT press, 2001. [[PDF]](https://direct.mit.edu/books/book/3869/Mechanics-of-Robotic-Manipulation)
 - [book] LaValle, Steven M. _Planning algorithms_. Cambridge university press, 2006. [[PDF]](http://lavalle.pl/planning/book.pdf)
+- [book] Choset, Howie, Kevin M. Lynch, Seth Hutchinson, George A. Kantor, and Wolfram Burgard. _Principles of robot motion: theory, algorithms, and implementations_. MIT press, 2005. [[PDF]](http://mathdep.ifmo.ru/wp-content/uploads/2018/10/Intelligent-Robotics-and-Autonomous-Agents-series-Choset-H.-et-al.-Principles-of-Robot-Motion_-Theory-Algorithms-and-Implementations-MIT-2005.pdf)
+- [book] Barfoot, Timothy D. _State estimation for robotics_. Cambridge University Press, 2017. [[PDF]](http://asrl.utias.utoronto.ca/~tdb/bib/barfoot_ser17.pdf)
+
 
 ---
 ## Robot Programming
