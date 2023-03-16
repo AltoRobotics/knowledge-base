@@ -26,6 +26,7 @@ Make sure to assign every item to a major category and link it somewhere. Also, 
   - Image labelling tool LabelMe [[link]](https://github.com/wkentaro/labelme)
   - Computer Vision Annotation Tool (CVAT) [[link]](https://github.com/opencv/cvat)
   - PlotJuggler [[link]](https://www.plotjuggler.io/)
+  - ROS/ROS2 GitHub CI Action [[link]](https://github.com/ros-tooling/action-ros-ci)
 - Libraries
   - Cpp Libraries [list](repositories.md)
 - Datasets
