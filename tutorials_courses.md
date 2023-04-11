@@ -2,7 +2,7 @@
 
 ## Generic Concepts
 
--[article] what Every Computer Scientist Should Know About Floating-Point Arithmetic [[PDF]](https://www.itu.dk/~sestoft/bachelor/IEEE754_article.pdf)
+- [article] what Every Computer Scientist Should Know About Floating-Point Arithmetic [[PDF]](https://www.itu.dk/~sestoft/bachelor/IEEE754_article.pdf)
 
 ---
 ## Robotics
