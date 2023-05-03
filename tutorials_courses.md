@@ -22,6 +22,7 @@
 
 - [tutorial] Making a mobile robot in ROS2+Gazebo [[link]](https://articulatedrobotics.xyz/mobile-robot-1-project-overview/)
 - [doc] Nav2 homepage (ROS2 navigation stack) [[link]](https://navigation.ros.org/index.html)
+- [tutorial] Intro to BT [[link]](https://www.youtube.com/playlist?list=PLFQdM4LOGDr_vYJuo8YTRcmv3FrwczdKg)
 
 ---
 ## Data Science, AI, ML
