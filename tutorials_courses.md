@@ -50,6 +50,10 @@
 - [tool] Pipenv: Python dev workflow for humans [[link]](https://pipenv.pypa.io/en/latest/)
 
 ---
+## Networking
+- [book]  High Performance Browser Networking [[link]](https://hpbn.co/)
+
+---
 ## Build Systems
 
 - [cmake] Cmake stuff [[link]](https://www.youtube.com/playlist?list=PL8i3OhJb4FNV10aIZ8oF0AA46HgA2ed8g)
