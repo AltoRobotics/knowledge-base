@@ -141,3 +141,34 @@ example
  ``` 
 
 ps docker-squash needs to be installed with pip.
+
+## Test communication among different environments
+
+Suppose, as the initial condition, you want to run some ROS2 sensor nodes on the robot and perform some computation into a docker container running on your laptop. For some reason, however, you launch the nodes on the robot but you cannot see the topics list in your docker.
+
+### Prerequisites
+
+Make sure that:
+ - both the robot and your laptop are on the same network (_AltoBot_ in our case) and check the IPs with the ``` ip a ``` command (run ```sudo apt-get install iproute2 -y``` if the command is not found). Both the robot and your environment should have an IP address like _192.168.3.X_;
+ - you have sourced the ROS2 file with ```source /opt/ros/humble/setup.bash```
+ - the ROS domain is the same with ```echo $ROS_DOMAIN_ID```;
+ - the docker is started with the correct configuration. Look at the _run.sh_ script in the docker folder, and possibly try with a new container created from the same original image).
+
+
+### ROS2 level
+
+If all of the options above do not help, first check if it is a ROS2 problem or something in the code with one of the following approaches:
+ - run ```ros2 doctor hello``` in the robot environment and see if you can find the topic _/canyouhearme_ in the topic list;
+ - run, specifically in this order, ```ros2 multicast receive``` into your laptop's docker and then ```ros2 multicast send``` from the robot side.
+
+If the subscriber (your laptop in this case) **cannot see** the _/canyouhearme_ topic in the list and/or **does not receive** any message sent from the robot means that the information is lost at a precedent level and you can go to the next section; else, we did not explore this problem and the relative solutions yet.
+
+### Docker/Laptop level
+
+At this point, we want to test if the docker/laptop is receiving the data, before they are managed by ROS:
+ - run ```ros2 doctor hello``` in the robot environment and take note of the Multicast Group address (it should be something like 225.0.0.1).
+ - in the docker/laptop you want to test, run ```sudo tcpdump -i wlo1 host [MULTICAST_GROUP_ADDRESS]``` (like sudo tcpdump -i wlo1 host 225.0.0.1) and check if the environment is receiving something.
+
+If this is the case, it means that the communication is working, but something between the environment and ROS is preventing the information to be seen. You can try disabling the firewall with ```sudo ufw disable``` and then run again the checks at the ROS2 level. This attempt worked in the past; future failures at this point should be addressed at the moment and reported here.
+
+Note: running ```sudo ufw reload``` refreshes the firewall rules, reactivating it. Do it if you need to or the solution proposed does not help, otherwise, the problem will raise again.
