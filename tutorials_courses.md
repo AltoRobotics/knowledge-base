@@ -44,6 +44,7 @@
 - [cpp] Back to basics video [[link]](https://www.youtube.com/playlist?list=PLPx_x6oKUZyt54Z1aFzLvTsCS96EyPoaj)
 - [doc] C++  reference [[link]](https://en.cppreference.com/w/cpp)
 - [guidelines] C++ core guidelines [[link]](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md)
+- [VideoCourse] C++ [[link]](https://www.youtube.com/playlist?list=PLvv0ScY6vfd8j-tlhYVPYgiIyXduu6m-L)
 
 ---
 ## Python
