@@ -22,6 +22,8 @@ Make sure to assign every item to a major category and link it somewhere. Also, 
   - [Cross build ROS2 Package](documentation.md#cross-build-ros2-package)
   - [Test communication among different environments](documentation.md#test-communication-among-different-environments)
 - :robot: [Sensors and Actuators](sensors.md)
+  - [Devices useful repositories](sensors.md#devices-useful-repositories)
+  - [FRAMOS D435e Camera](sensors.md#framos-d435e-camera)
 - Tools
   - Image labelling tool LabelImg [[link]](https://github.com/heartexlabs/labelImg)
   - Image labelling tool LabelMe [[link]](https://github.com/wkentaro/labelme)
