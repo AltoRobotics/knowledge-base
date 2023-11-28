@@ -172,3 +172,7 @@ At this point, we want to test if the docker/laptop is receiving the data, befor
 If this is the case, it means that the communication is working, but something between the environment and ROS is preventing the information to be seen. You can try disabling the firewall with ```sudo ufw disable``` and then run again the checks at the ROS2 level. This attempt worked in the past; future failures at this point should be addressed at the moment and reported here.
 
 Note: running ```sudo ufw reload``` refreshes the firewall rules, reactivating it. Do it if you need to or the solution proposed does not help, otherwise, the problem will raise again.
+
+### Small stuff
+
+https://chrisjhart.com/Windows-10-ssh-copy-id/
