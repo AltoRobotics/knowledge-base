@@ -1,6 +1,6 @@
 # Inxpect Radar 200S
 
-## [Video tutorial](https://www.youtube.com/watch?v=gXUdojU0PK8&list=PL2DBTrkO_vw2XxB7L_wobYaPWWIt-ITiW) about proprietary sofwtare
+## [Video tutorial](https://www.youtube.com/watch?v=gXUdojU0PK8&list=PL2DBTrkO_vw2XxB7L_wobYaPWWIt-ITiW) about proprietary software
 
 ## Useful info and parameters to play with
  - 4 consecutive detection ranges for each sensor
