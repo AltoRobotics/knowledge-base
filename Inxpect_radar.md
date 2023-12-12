@@ -60,15 +60,15 @@ Sensor 2 - Detection Field 2
 
 ### Tests:
 
-| Safety Working | Obstacle Distance | Output 1 | Output 2    | Static Object | Human Detection |
-|----------------|-------------------|----------|-------------|---------------|-----------------|
-|     Always     |        1500       |     v    |      v      |       x       |        x        |
-|     Always     |        1500       |     v    | x (reset 4) |       x       |        v        |
-|     Always     |        1000       |     v    |      v      |       x       |        x        |
-|     Always     |        1000       |     x    |   x (Mask)  |       x       |        v        |
-|     Restart    |        2000       |     v    |      v      |       x       |        x        |
-|     Restart    |        2000       |     v    | v (reset 4) |       x       |        v        |
-|     Restart    |        1000       |     x    |      x      |       x       |        v        |
+| Safety Working | Obstacle Distance [mm] | Detect. Field 1 | Detect. Field 2 | Static Object | Human Detection |
+|----------------|------------------------|-----------------|-----------------|---------------|-----------------|
+|     Always     |          1500          |        v        |        v        |       x       |        x        |
+|     Always     |          1500          |        v        |   x (reset 4)   |       x       |        v        |
+|     Always     |          1000          |        v        |        v        |       x       |        x        |
+|     Always     |          1000          |        x        |     x (Mask)    |       x       |        v        |
+|     Restart    |          2000          |        v        |        v        |       x       |        x        |
+|     Restart    |          2000          |        v        |   v (reset 4)   |       x       |        v        |
+|     Restart    |          1000          |        x        |        x        |       x       |        v        |
 
 ### Conclusion (temp):
 Usage of radars could be okay if our goal is to detect something/someone at a 2 m distance and 20 cm height, considering the range of interest as an arc produced by the radar signal. What happens in between these 2 meters can be discarded for the purpose of safety, as it should be detected by other sensors during the robot's navigation,
