@@ -21,6 +21,7 @@ Make sure to assign every item to a major category and link it somewhere. Also, 
   - [Run tests on Arm architecture using qemu](documentation.md#run-tests-on-arm-architecture-using-qemu)
   - [Cross build ROS2 Package](documentation.md#cross-build-ros2-package)
   - [Test communication among different environments](documentation.md#test-communication-among-different-environments)
+  - [Tracking+Re-ID test on different platforms](Re-ID_test_GPUs.md)
 - :robot: [Sensors and Actuators](sensors.md)
   - [Devices useful repositories](sensors.md#devices-useful-repositories)
   - [FRAMOS D435e Camera](sensors.md#framos-d435e-camera)
