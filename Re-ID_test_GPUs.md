@@ -25,6 +25,8 @@ Note: versions depend on the JetPack version of the device. In our case should b
 
 (*) if you are in a virtual environment, to install torchvision inside it add to the PYTHONPATH the path to your Python executable (like ~/path/to/venv/lib/python3.8) and run ```python3 setup.py install``` WITHOUT ```--user```.
 
+Finally, uninstall any precedent version you have of ultralytics. This package works only with its specific version. To get it, once all the installations work fine, run the ```track.py``` example in the examples folder to automatically download it.
+
 
 ### Results
 
