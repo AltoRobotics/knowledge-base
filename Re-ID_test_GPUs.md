@@ -6,7 +6,7 @@ This page serves as a log for the test conducted on the YoloV8 detection + Track
 
 The whole pipeline is based on [BoxMOT](https://github.com/mikel-brostrom/yolo_tracking). 
 
-### Requirements
+### Installation
 While on a classic Ubuntu system the installation should be straightforward, to run the script on NVIDIA platforms you have to:
  - [optional] Create a virtual environment with Python3.8
  - Clone the BoxMOT repository following the instructions from the link above and install the package. Note: the installation process is highly verbose; to reduce the amount of text, omit the ```-v``` command when installing with pip.
