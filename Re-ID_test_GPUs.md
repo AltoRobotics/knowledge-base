@@ -12,7 +12,7 @@ While on a classic Ubuntu system the installation should be straightforward, to 
  - Clone the BoxMOT repository following the instructions from the link above and install the package. Note: the installation process is highly verbose; to reduce the amount of text, omit the ```-v``` command when installing with pip.
  At this point, some issues might pop up:
 - ```AttributeError: module ; setuptools.errors' has no attribute 'CompileError'``` -> Solution: ```pip install setuptools==59.5.0```
-- ```error: invalid command 'bdist_wheel'``` -> Solution: ```pip install wheel```
+- ```error: invalid command 'bdist_wheel'``` -> Solution: ```pip install wheel``` and then ```python setup.py bdist_wheel```
 - Issue with grpcio -> Solution: ```pip install grpcio``` (takes some time to compile)
 
 Run the installation command from BoxMOT again; everything should work fine.
