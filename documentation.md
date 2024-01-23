@@ -176,3 +176,157 @@ Note: running ```sudo ufw reload``` refreshes the firewall rules, reactivating i
 ### Small stuff
 
 https://chrisjhart.com/Windows-10-ssh-copy-id/
+
+## Setting up LattePanda 3 Delta as Husky PC
+
+These are the steps I followed in order to prepare a Lattepanda 3 Delta for Husky. 
+
+### Installing Ubuntu 22.04 Server 
+
+I tried to install the server version since it lacks any GUI or GUI applications, therefore it is lighter both on disk usage and startup time. It is also way faster to install when compared to the Desktop version. I configured it to connect to Ethernet during installation and to not install third-party software. I used `administrator` as username since most of the Clearpath stuff assumes it to be the operating user name. I used `husky-core` as hostname.
+
+The first thing to do after installation is to configure networking. I backed up and removed the YAML files under `/etc/netplan` and created a `/etc/netplan/00-netcfg.yaml` config file 
+
+<details>
+<summary>/etc/netplan/00-netcfg.yaml</summary>
+
+```yaml
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp1s0:
+      dhcp4: no
+      dhcp6: no
+      addresses:
+        - 192.168.3.XX/24
+  wifis:
+    wlo1:
+      dhcp4: no
+      dhcp6: no
+      addresses:
+        - 192.168.3.XX/24
+      nameservers:
+        addresses: [8.8.8.8, 8.8.4.4]
+      routes:
+        - to: default
+          via: 192.168.3.254
+      access-points:
+        AltoBot:
+          password: XXXXXXX
+```
+</details>
+
+Of course, fix the IPs and WiFi password as required. After creating the file, load it with `sudo netplan apply /etc/netplan/00-netcfg.yaml`. Use `ip a` to make sure the configuration has been applied.
+
+By default, Ubuntu Server 22.04 will wait for a network connection to finalize boot. You can disable it via 
+
+```bash
+systemctl disable systemd-networkd-wait-online.service cloud-init.service cloud-final.service
+systemctl mask systemd-networkd-wait-online.service cloud-init.service cloud-final.service 
+```
+
+After this, refer to the [official documentation](https://docs.clearpathrobotics.com/docs/ros/installation/robot). Follow the install procedure using the script. Before configuring the network bridge using `clearpath-computer-setup` remove the `ethernets` entry from the `/etc/netplan/00-netcfg.yaml` file, leaving only the WiFi (that won't be bridged for the time being). After running `clearpath-computer-setup` with default settings you should end up with a 
+
+<details>
+<summary>/etc/netplan/50-clearpath-standard.yaml</summary>
+
+```yaml
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp1s0:
+      dhcp4: 'yes'
+      dhcp6: 'no'
+    bridge_enx:
+      dhcp4: 'no'
+      dhcp6: 'no'
+      match:
+        name: enx*
+  bridges:
+    br0:
+      dhcp4: 'yes'
+      dhcp6: 'no'
+      interfaces:
+      - enp1s0
+      - bridge_enx
+      addresses:
+      - 192.168.131.1/24
+```
+</details>
+
+After a restart of the `clearpath-robot.service` service use a minimal `robot.yaml` config file under `/etc/clearpath` such as 
+
+<details>
+<summary>/etc/clearpath/robot.yaml</summary>
+
+```yaml
+serial_number: a200-0000
+version: 0
+system:
+  username: administrator
+  hosts:
+    self: husky-core
+    platform:
+      cpr-a200-0000: 192.168.131.1
+    onboard: {}
+    remote: {}
+  ros2:
+    namespace: a200_0000
+    domain_id: 0
+    rmw_implementation: rmw_fastrtps_cpp
+    workspaces: []
+platform:
+  controller: ps4
+  battery:
+    model: ES20_12C
+    configuration: S2P1
+  attachments:
+    - name: front_bumper
+      type: bumper
+      parent: front_bumper_mount
+    - name: rear_bumper
+      type: bumper
+      parent: rear_bumper_mount
+    - name: top_plate
+      type: top_plate
+    - name: sensor_arch
+      type: sensor_arch
+      parent: default_mount
+      enabled: False
+  extras:
+    urdf: null
+    ros_parameters:
+      platform_velocity_controller:
+        linear.x.max_velocity": 1.0
+        linear.x.min_velocity": -1.0
+        linear.x.max_acceleration": 3.0
+        linear.x.min_acceleration": -3.0
+        angular.z.max_velocity": 2.0
+        angular.z.min_velocity": -2.0
+        angular.z.max_acceleration": 6.0
+        angular.z.min_acceleration": -6.0
+links:
+  box: []
+  cylinder: []
+  frame: []
+  mesh: []
+  sphere: []
+mounts:
+  bracket: []
+  fath_pivot: []
+  riser: []
+  disk: []
+  post: []
+sensors:
+  camera: []
+  gps: []
+  imu: []
+  lidar2d: []
+  lidar3d: []
+```
+
+</details>
+
+
