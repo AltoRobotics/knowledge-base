@@ -2,6 +2,8 @@
 
 ## [Video tutorial](https://www.youtube.com/watch?v=gXUdojU0PK8&list=PL2DBTrkO_vw2XxB7L_wobYaPWWIt-ITiW) about proprietary software
 ## [Radar logger](https://github.com/AltoRobotics/knowledge-base/blob/main/scripts/radar_logger.py) python3 script (pyModbusTCP required)
+## [Tests December 12th 2023](#Tests-December-12th-2023)
+## [Tests January 30th 2024](#Tests-January-30th-2024)
 
 ## Useful info and parameters to play with
  - 4 consecutive detection ranges for each sensor
@@ -72,4 +74,21 @@ Sensor 2 - Detection Field 2
 |     Restart    |          1000          |        x        |        x        |       x       |        v        |
 
 ### Conclusion (temp):
-Usage of radars could be okay if our goal is to detect something/someone at a 2 m distance and 20 cm height, considering the range of interest as an arc produced by the radar signal. What happens in between these 2 meters can be discarded for the purpose of safety, as it should be detected by other sensors during the robot's navigation,
+Usage of radars could be okay if our goal is to detect something/someone at a 2 m distance and 20 cm height, considering the range of interest as an arc produced by the radar signal. What happens in between these 2 meters can be discarded for safety, as other sensors should detect it during the robot's navigation.
+
+## Tests January 30th 2024
+
+Sensors are placed on Husky at a distance of 22 cm each other, with a heigh of 49 cm from the floor, and tilted of 10° frontward. A RealSense D435i is placed in between of the radars to visualize what the robot is seeing and how the depth works. The detection fields are shaped to cover the whole Husky width (a bit more in further tests), intersecting at the center (this area can be adjusted to completely overlap), and with each detection field long 1.05 meters such that we are able to look at a height of 20 cm from the floor at the first meter, and to the floor at the second meter.
+
+![husky_radar_realsense](https://github.com/AltoRobotics/knowledge-base/assets/32684998/0244a9a5-2e60-4e98-a3ef-0646968967d0)
+
+![realsense_viewer_inxpect](https://github.com/AltoRobotics/knowledge-base/assets/32684998/5328b8d2-2f70-41d1-a6ae-ad7b2b44a827)
+
+### Notes
+ - The ST.O.D. threshold has been increased from 0 dB to 3 dB to overcome the issue with Sensor 1 always detecting some static object close to the device;
+ - The detection depends on the material type, texture and angle of incidence of the radar waves, not from the object color;
+ - The ST.O.D. option does not guarantee the 100% detection of static objects
+ 
+### Conclusion (temp):
+
+We remotely controlled Husky on the street crossing BIC. The radars are robust to motion and rotation with high vibrations, even when stepping on bumpers, but manholes proved to be a strong reason of concern, as they can be easily detected. This would bring the robot to halt in case of small objects or flat things on the floor. For the time being the radar solution is a no, but a better understanding of the normatives will tell us if there is a way to avoid this problem or not. For instance, if it is required to perceive objects/people at 20 cm height in the first meter, there is no way to do so without looking at the floor in the second meter. If somehow this can be avoided, we might still be able to find a solution.
