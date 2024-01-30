@@ -2,8 +2,8 @@
 
 ## [Video tutorial](https://www.youtube.com/watch?v=gXUdojU0PK8&list=PL2DBTrkO_vw2XxB7L_wobYaPWWIt-ITiW) about proprietary software
 ## [Radar logger](https://github.com/AltoRobotics/knowledge-base/blob/main/scripts/radar_logger.py) python3 script (pyModbusTCP required)
-## [Tests December 12th 2023](#Tests-December-12th-2023)
-## [Tests January 30th 2024](#Tests-January-30th-2024)
+## [Tests Dec. 2023](#Tests-December-12th-2023)
+## [Tests Jan. 2024](#Tests-January-30th-2024)
 
 ## Useful info and parameters to play with
  - 4 consecutive detection ranges for each sensor
@@ -92,3 +92,5 @@ Sensors are placed on Husky at a distance of 22 cm each other, with a heigh of 4
 ### Conclusion (temp):
 
 We remotely controlled Husky on the street crossing BIC. The radars are robust to motion and rotation with high vibrations, even when stepping on bumpers, but manholes proved to be a strong reason of concern, as they can be easily detected. This would bring the robot to halt in case of small objects or flat things on the floor. For the time being the radar solution is a no, but a better understanding of the normatives will tell us if there is a way to avoid this problem or not. For instance, if it is required to perceive objects/people at 20 cm height in the first meter, there is no way to do so without looking at the floor in the second meter. If somehow this can be avoided, we might still be able to find a solution.
+
+[Videos here](https://teams.microsoft.com/_?tenantId=fdc2c880-f495-4594-8118-e5d270bf792e#/conversations/unknown?threadId=19:WaAvRSyvcNEaLaUhFhgAvuNIzfQ-_xwBDWQ24W4EE9M1@thread.tacv2&messageId=1706622748102&replyChainId=1706622748102&ctx=channel)
