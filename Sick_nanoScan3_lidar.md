@@ -31,5 +31,5 @@ Finally, send the custom configuration to the device like this:
 
 ![Screenshot 2024-02-19 105156](https://github.com/AltoRobotics/knowledge-base/assets/32684998/727e1b36-2fd3-48e5-9a53-eb2d856841ba)
 
-### Test 19/2/2024
+## Test 19/2/2024
 The performed tests (a very simple check of the detection fields) have shown the device to be responsive fast enough for what we need, proving the LiDAR to be a better solution for safety than radar, as we expected.
