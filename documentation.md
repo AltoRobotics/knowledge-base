@@ -329,4 +329,26 @@ sensors:
 
 </details>
 
+## Auto Bring Up Can Interfaces with Systemd
 
+To auto bring up the can interfaces with `systemd-networkd` you should create a configuration file for systemd 
+
+<details>
+<summary>/etc/systemd/network/80-can.network</summary>
+
+```toml
+[Match]
+Name=can*
+
+[CAN]
+BitRate=1000000
+TransmitQueueLength=256
+RestartSec=100ms
+```
+</details>
+
+Be sure to enable systemd-nwtworkd
+
+```bash
+sudo systemctl enable systemd-networkd
+```

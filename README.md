@@ -22,6 +22,7 @@ Make sure to assign every item to a major category and link it somewhere. Also, 
   - [Cross build ROS2 Package](documentation.md#cross-build-ros2-package)
   - [Test communication among different environments](documentation.md#test-communication-among-different-environments)
   - [Tracking+Re-ID test on different platforms](Re-ID_test_GPUs.md)
+  - [Auto Bring Up Can Interfaces with systemd-networkd](documentation.md#auto-bring-up-can-interfaces-with-systemd)
 - :robot: [Sensors and Actuators](sensors.md)
   - [Devices useful repositories](sensors.md#devices-useful-repositories)
   - [FRAMOS D435e Camera](sensors.md#framos-d435e-camera)
