@@ -33,3 +33,22 @@ Finally, send the custom configuration to the device like this:
 
 ## Test 19/2/2024
 The performed tests (a very simple check of the detection fields) have shown the device to be responsive fast enough for what we need, proving the LiDAR to be a better solution for safety than radar, as we expected.
+
+## Test 10/5/2024
+We currently designed the LiDAR to be at the center of the robot, but a problem popped up: there is no way to say "start detecting from this radius of X cm", therefore the solution adopted sees the creation of 'fake obstacles' where the wheels are supposed to be (the grey objects in the image below) to exclude those areas. 
+
+![Screenshot 2024-05-10 094425](https://github.com/AltoRobotics/knowledge-base/assets/32684998/9607b922-538c-4dd4-9e15-3278b1f009f9)
+
+However, we cannot plan 3 set of fields for each robot configuration (normal, pure rotation, crab-walk) to always have the maximum possible range, as the nanoScan3 Core has apparently only 2 possible sets. Considering only one set and as obstacle the whole range of motion of the wheels, the front window of the LiDAR seems to narrow. We might have to move the sensor forward, closer to the head, to increase the range.
+
+Other info about the current configuration are:
+ - the object resolution is set to Leg (60mm) with 4x multiple evaluation (as suggested for mobile robots) to increase the protection field to our needs
+ - the stop signal is associated to the OSSD, and the warning signal to the universal output 1
+ 
+![Screenshot 2024-05-10 094340](https://github.com/AltoRobotics/knowledge-base/assets/32684998/3ce8678d-b359-4dea-aee5-bfa1bc1ef6de)
+
+![Screenshot 2024-05-10 094519](https://github.com/AltoRobotics/knowledge-base/assets/32684998/e63f887c-881a-445f-9ba5-4e877344d5f4)
+
+Funny bit: there's an indicator of the cleaness of the LiDAR cap. I found it at 40% dirt and with a simple tissue for glasses I brought it back to 3%.
+
+![Pulizia_calotta](https://github.com/AltoRobotics/knowledge-base/assets/32684998/e2f16a0b-9d73-4b04-916f-c068c4780ba2)
