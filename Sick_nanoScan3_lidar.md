@@ -1,5 +1,5 @@
 
-# Inxpect Radar 200S
+# SICK nanoscan3 Core
 
 ## [Tutorial Playlist](https://www.youtube.com/playlist?list=PLYOEqjmcX3qGQWubPR6m3nTOpJqDv8gj9) (specifically, I followed [this tutorial](https://www.youtube.com/watch?v=rKkS8W7DeXc&list=PLYOEqjmcX3qGQWubPR6m3nTOpJqDv8gj9&index=3&pp=iAQB) to configure the LiDAR)
 ## Documentation and Safety Designer software [here](https://www.sick.com/it/it/catalog/prodotti/safety/laser-scanner-di-sicurezza/nanoscan3/c/g507056?category=g568283&tab=downloads) 
