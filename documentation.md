@@ -352,3 +352,39 @@ Be sure to enable systemd-nwtworkd
 ```bash
 sudo systemctl enable systemd-networkd
 ```
+
+
+## Tpdo Roboteq reconfiguration procedure
+
+to be able to receive the PDOs from the roboteq motor controllers
+you have to reconfigure its tpdo
+You can use can master shell: 
+
+```bash
+[can0] CanShell > wsdo 0x10 0x1800 1 0xc0000000 4
+wsdo 16 0x1800 1 -1073741824 4
+[can0] CanShell > rsdo 0x10 0x1800 1
+rsdo 16 0x1800 1
+data: 0xc0000000 - 3221225472, size:4
+[can0] CanShell > rsdo 0x10 0x1a00 0
+rsdo 16 0x1a00 0
+data: 0x0 - 0, size:1
+[can0] CanShell > rsdo 0x10 0x1a00 1
+rsdo 16 0x1a00 1
+data: 0x20050920 - 537200928, size:4
+[can0] CanShell > rsdo 0x10 0x1a00 2
+rsdo 16 0x1a00 2
+data: 0x20050920 - 537200928, size:4
+[can0] CanShell > rsdo 0x10 0x1a00 3
+rsdo 16 0x1a00 3
+data: 0x20050920 - 537200928, size:4
+[can0] CanShell > wsdo 0x10 0x1A00 1 0x606c0020 4
+wsdo 16 0x1a00 1 1617690656 4
+[can0] CanShell > wsdo 0x10 0x1A00 2 0x60640020 4
+wsdo 16 0x1a00 2 1617166368 4
+[can0] CanShell > wsdo 0x10 0x1A00 0 2 1
+wsdo 16 0x1a00 0 2 1
+[can0] CanShell > wsdo 0x10 0x1800 1 0x40000190 4
+wsdo 16 0x1800 1 1073742224 4
+
+```
